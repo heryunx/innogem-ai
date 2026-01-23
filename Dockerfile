@@ -20,7 +20,7 @@
     
     
     # --- Stage 2: Production ---
-    FROM node:18-alpine AS runner
+    FROM node:20-alpine AS runner
     
     WORKDIR /app
     
