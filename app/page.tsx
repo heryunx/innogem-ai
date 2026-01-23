@@ -84,9 +84,12 @@ export default function Home() {
                 variants={fadeUp}
                 className="flex flex-col sm:flex-row items-center lg:items-start gap-4 sm:gap-6 mt-8 sm:mt-10 justify-center lg:justify-start"
               >
-                <Button className="bg-purple-500 hover:bg-purple-600 rounded-xl px-8 py-3">
-                  Explore Innovation
-                </Button>
+                <Link href="#capabilities">
+                  <Button className="bg-purple-500 hover:bg-purple-600 rounded-xl px-8 py-3">
+                    Explore Innovation
+                  </Button>
+                </Link>
+
                 <button className="text-sm text-gray-300 hover:text-white underline underline-offset-4">
                   Download Whitepaper
                 </button>

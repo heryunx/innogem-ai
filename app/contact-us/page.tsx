@@ -20,28 +20,10 @@ export default function ContactPage() {
 
     const contactPoints = [
         {
-            icon: <Mail className="w-6 h-6" />,
-            title: "General Inquiries",
-            details: ["contact@innogem.com", "info@innogem.com"],
-            description: "For general questions and information",
-        },
-        {
             icon: <Phone className="w-6 h-6" />,
             title: "Sales & Partnerships",
-            details: ["+1 (555) 123-4567", "sales@innogem.com"],
+            details: ["+49 211 15897495", "sales@innogem.ai"],
             description: "Discuss solutions and partnership opportunities",
-        },
-        {
-            icon: <Users className="w-6 h-6" />,
-            title: "Support",
-            details: ["support@innogem.com"],
-            description: "Technical support and assistance",
-        },
-        {
-            icon: <Handshake className="w-6 h-6" />,
-            title: "Careers",
-            details: ["careers@innogem.com"],
-            description: "Join our innovative team",
         },
     ];
 
