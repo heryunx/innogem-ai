@@ -28,6 +28,7 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp, fadeIn, stagger } from "@/lib/motion";
+import Link from "next/link";
 
 export default function ResourcesPage() {
     const router = useRouter();
@@ -180,7 +181,7 @@ export default function ResourcesPage() {
                 </motion.section>
 
                 {/* ================= FEATURED WHITEPAPER ================= */}
-                {/* <motion.section
+                <motion.section
                     id="whitepapers"
                     initial="hidden"
                     whileInView="show"
@@ -195,7 +196,8 @@ export default function ResourcesPage() {
                                 <span className="text-teal-400">Whitepaper</span>
                             </h2>
                             <p className="text-gray-400">
-                                In-depth research and analysis on emerging technologies and industry trends.
+                                Insights and frameworks for measuring audiences, performance, and impact
+                                across modern OTT platforms.
                             </p>
                         </motion.div>
 
@@ -206,6 +208,7 @@ export default function ResourcesPage() {
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 blur-3xl -z-10" />
 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                {/* LEFT */}
                                 <div className="p-8 lg:p-12">
                                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/20 text-teal-400 rounded-full text-sm font-medium mb-6">
                                         <BookOpen className="w-4 h-4" />
@@ -213,12 +216,12 @@ export default function ResourcesPage() {
                                     </div>
 
                                     <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                                        NEXUS-RAN Lite: Innovation at the Intersection of 5G, AI & Cybersecurity
+                                        OTT Media Measurement: A Unified Framework for the Streaming Era
                                     </h3>
 
                                     <p className="text-gray-400 mb-6 leading-relaxed">
-                                        This whitepaper explores how intelligent, secure design supports next-generation digital
-                                        networks in an increasingly open and connected world.
+                                        This document is intended to MNOs to share that Innogem capable to measure OTT Media (Tiktok,
+                                        Netflix and Facebook) and to share why OTT Media should be measured.
                                     </p>
 
                                     <div className="flex flex-wrap gap-4 mb-8">
@@ -228,30 +231,44 @@ export default function ResourcesPage() {
                                         </div>
                                         <div className="flex items-center gap-2 text-sm text-gray-400">
                                             <Clock className="w-4 h-4" />
-                                            25 min read
+                                            20 min read
                                         </div>
                                     </div>
 
                                     <div className="flex flex-wrap gap-4">
-                                        <Button className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 rounded-xl px-8 py-4">
-                                            <Download className="w-5 h-5 mr-2" />
-                                            Download Whitepaper (PDF)
-                                        </Button>
+                                        <Link
+                                            href="/documents/ott-media-measurement.pdf"
+                                            target="_blank"
+                                            download
+                                        >
+                                            <Button className="bg-gradient-to-r from-teal-500 to-emerald-500 rounded-xl px-8 py-4">
+                                                <Download className="w-5 h-5 mr-2" />
+                                                Download Whitepaper (PDF)
+                                            </Button>
+                                        </Link>
+
                                     </div>
                                 </div>
 
+                                {/* RIGHT */}
                                 <div className="relative p-8 lg:p-12 flex items-center justify-center">
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-2xl" />
                                     <div className="relative z-10 text-center">
-                                        <div className="text-8xl font-bold text-white/10 mb-4">NEXUS</div>
-                                        <div className="text-2xl font-bold text-teal-300 mb-2">RAN Lite Edition</div>
-                                        <p className="text-gray-300">5G • AI • Cybersecurity</p>
+                                        <div className="text-7xl font-bold text-white/10 mb-4">
+                                            OTT
+                                        </div>
+                                        <div className="text-2xl font-bold text-teal-300 mb-2">
+                                            Media Measurement
+                                        </div>
+                                        <p className="text-gray-300">
+                                            Reach • Engagement • Attribution
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
                     </div>
-                </motion.section> */}
+                </motion.section>
 
 
 
