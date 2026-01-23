@@ -31,6 +31,11 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/impressum" className="hover:text-white transition">
+                                    Impressum
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/resources" className="hover:text-white transition">
                                     Resources
                                 </Link>
@@ -76,10 +81,10 @@ export default function Footer() {
                             <li>
                                 Email:{" "}
                                 <a
-                                    href="mailto:contact@innogem.ai"
+                                    href="mailto:sales@innogem.ai"
                                     className="text-gray-300 hover:text-white transition"
                                 >
-                                    contact@innogem.ai
+                                    sales@innogem.ai
                                 </a>
                             </li>
                             <li>
@@ -88,10 +93,9 @@ export default function Footer() {
                                     href="tel:+6281234567890"
                                     className="text-gray-300 hover:text-white transition"
                                 >
-                                    +62 812 3456 7890
+                                    +49 211 15897495
                                 </a>
                             </li>
-                            <li>Jakarta, Indonesia</li>
                             <li className="pt-2">
                                 <Link
                                     href="/contact-us"

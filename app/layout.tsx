@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Innogem Ai",
+  description: "Innovation at the Intersection of 5G, AI & Cybersecurity"
 };
 
 export default function RootLayout({
