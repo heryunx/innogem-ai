@@ -1,0 +1,72 @@
+name: 🚀 Deploy Next.js with Docker & GHCR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: 🔑 Setup Environment Variables
+        run: |
+          echo "NEXT_PUBLIC_API_BASE_URL=${{ secrets.NEXT_PUBLIC_API_BASE_URL }}" >> .env
+          echo "APP_PORT=${{ secrets.APP_PORT }}" >> .env
+        shell: bash
+
+      - name: 🔑 Login to GitHub Container Registry (GHCR)
+        run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: 📦 Build & Push Docker Image
+        run: |
+          REPOSITORY_OWNER_LOWER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE_NAME=ghcr.io/$REPOSITORY_OWNER_LOWER/innogem-ai
+          SHA_TAG=${{ github.sha }}
+          
+          docker build -t $IMAGE_NAME:$SHA_TAG .
+          docker tag $IMAGE_NAME:$SHA_TAG $IMAGE_NAME:latest
+          
+          docker push $IMAGE_NAME:$SHA_TAG
+          docker push $IMAGE_NAME:latest
+
+      - name: 🔑 Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: 🚀 Deploy to VPS via SSH
+        run: |
+          REPOSITORY_OWNER_LOWER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE_NAME=ghcr.io/$REPOSITORY_OWNER_LOWER/innogem-ai
+          SHA_TAG=${{ github.sha }}
+
+          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << EOF
+            IMAGE_NAME=$IMAGE_NAME SHA_TAG=$SHA_TAG
+
+            echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+            docker pull $IMAGE_NAME:$SHA_TAG
+            docker tag $IMAGE_NAME:$SHA_TAG $IMAGE_NAME:latest
+            docker rm -f innogem-ai
+
+            docker run -d --restart=always --name innogem-ai \
+            -p ${{ secrets.APP_PORT }}:${{ secrets.APP_PORT }} \
+            -e NEXT_PUBLIC_API_BASE_URL=${{ secrets.NEXT_PUBLIC_API_BASE_URL }} \
+            -e NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }} \
+            -e NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }} \
+            -e PORT=${{ secrets.APP_PORT }} \
+            $IMAGE_NAME:latest \
+            npm run start
+
+
+            docker images "$IMAGE_NAME" --format "{{.Repository}}:{{.Tag}}" \
+              | grep -v "${{ github.sha }}" \
+              | xargs -r docker rmi || true
+          EOF
