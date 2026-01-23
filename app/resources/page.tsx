@@ -216,7 +216,7 @@ export default function ResourcesPage() {
                                     </div>
 
                                     <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                                        OTT Media Measurement: A Unified Framework for the Streaming Era
+                                        OTT Media Measurement
                                     </h3>
 
                                     <p className="text-gray-400 mb-6 leading-relaxed">
