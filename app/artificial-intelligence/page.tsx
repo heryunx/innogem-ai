@@ -36,13 +36,13 @@ export default function AIIntelligencePage() {
         {
             icon: <Shield className="w-6 h-6" />,
             title: "Risk Detection",
-            description: "Identify anomalies and emerging threats in real-time",
+            description: "Identify anomalies and emerging threats in real time",
             color: "from-blue-500/20 to-cyan-500/20"
         },
         {
             icon: <Zap className="w-6 h-6" />,
             title: "Fast Decisions",
-            description: "Accelerate response times with AI-powered recommendations",
+            description: "Accelerate response times with AI powered recommendations",
             color: "from-green-500/20 to-emerald-500/20"
         }
     ];
@@ -203,13 +203,13 @@ export default function AIIntelligencePage() {
                                 </h2>
                                 <p className="text-gray-400 mb-6 leading-relaxed">
                                     Innogem uses AI to turn complex network information into clear, actionable insight.
-                                    Our intelligent systems monitor, analyze, and interpret vast amounts of data in real-time,
+                                    Our intelligent systems monitor, analyze, and interpret vast amounts of data in real time,
                                     providing unprecedented visibility into network operations.
                                 </p>
                                 <p className="text-gray-400 mb-8 leading-relaxed">
                                     We identify unusual behavior and emerging risks before they impact your operations,
-                                    supporting faster, better-informed decisions that keep your networks secure, efficient,
-                                    and future-ready.
+                                    supporting faster, better informed decisions that keep your networks secure, efficient,
+                                    and future ready.
                                 </p>
 
                                 <div className="space-y-4 mb-8">

@@ -16,7 +16,7 @@ export default function FiveGConnectivityPage() {
         {
             icon: <Zap className="w-6 h-6" />,
             title: "Ultra-Low Latency",
-            description: "Near real-time communication enabling mission-critical applications"
+            description: "Near real time communication enabling mission-critical applications"
         },
         {
             icon: <Globe className="w-6 h-6" />,
@@ -88,7 +88,7 @@ export default function FiveGConnectivityPage() {
                                 <span className="text-blue-400">5G and Future Networks</span>
                             </h1>
                             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                                5G is more than faster data speeds. It enables low-latency communication,
+                                5G is more than faster data speeds. It enables low latency communication,
                                 massive connectivity, and new digital experiences across industries.
                             </p>
                         </motion.div>
@@ -189,7 +189,7 @@ export default function FiveGConnectivityPage() {
                             {[
                                 {
                                     title: "Reliable Connectivity",
-                                    description: "Ensuring consistent, high-quality connections for critical applications",
+                                    description: "Ensuring consistent, high quality connections for critical applications",
                                     color: "from-blue-500/20 to-blue-600/20"
                                 },
                                 {
@@ -204,7 +204,7 @@ export default function FiveGConnectivityPage() {
                                 },
                                 {
                                     title: "Security Foundation",
-                                    description: "Embedding security from the ground up for long-term innovation",
+                                    description: "Embedding security from the ground up for long term innovation",
                                     color: "from-purple-500/20 to-purple-600/20"
                                 }
                             ].map((benefit, index) => (

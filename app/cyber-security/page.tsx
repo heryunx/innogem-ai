@@ -218,7 +218,7 @@ export default function CybersecurityPage() {
                                     <span className="text-red-400">Strategic Enabler</span>
                                 </h2>
                                 <p className="text-gray-400 mb-6 leading-relaxed">
-                                    In today's interconnected world, cybersecurity is no longer just about protection—it's
+                                    In today's interconnected world, cybersecurity is no longer just about protection it's
                                     about enabling progress. At Innogem, we believe cybersecurity should
                                     <span className="text-white font-medium"> enable innovation, not restrict it</span>.
                                 </p>

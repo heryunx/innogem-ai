@@ -38,7 +38,7 @@ export default function AboutPage() {
         {
             icon: <Lightbulb className="w-6 h-6" />,
             title: "Innovation Driven",
-            description: "Constantly pushing boundaries to create cutting-edge solutions",
+            description: "Constantly pushing boundaries to create cutting edge solutions",
             color: "from-purple-500/20 to-pink-500/20"
         },
         {
@@ -113,8 +113,8 @@ export default function AboutPage() {
                                 <span className="text-amber-400">Secure, Intelligent Connectivity</span>
                             </h1>
                             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                                Innogem is an innovation-focused company dedicated to bridging{" "}
-                                <span className="text-white font-medium">technology, strategy, and real-world deployment</span>{" "}
+                                Innogem is an innovation focused company dedicated to bridging{" "}
+                                <span className="text-white font-medium">technology, strategy, and real world deployment</span>{" "}
                                 to help organizations move confidently into the future.
                             </p>
                         </motion.div>
@@ -183,7 +183,7 @@ export default function AboutPage() {
                                     <div className="space-y-4">
                                         {[
                                             "Universal access to secure networks",
-                                            "Seamless human-technology interaction",
+                                            "Seamless human technology interaction",
                                             "Sustainable digital infrastructure",
                                             "Trusted global connectivity"
                                         ].map((item, index) => (

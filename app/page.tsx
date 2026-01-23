@@ -76,7 +76,7 @@ export default function Home() {
                 variants={fadeUp}
                 className="text-gray-400 mt-6 sm:mt-8 max-w-xl mx-auto lg:mx-0 leading-relaxed text-sm sm:text-base"
               >
-                Innogem is an innovation-driven company shaping the future of
+                Innogem is an innovation driven company shaping the future of
                 intelligent, secure, and resilient digital networks.
               </motion.p>
 
@@ -215,7 +215,7 @@ export default function Home() {
             >
               Innogem supports organizations building and operating
               <span className="text-white font-medium">
-                {" "}next-generation networks{" "}
+                {" "}next generation networks{" "}
               </span>
               and digital infrastructure that are intelligent, secure, and resilient.
             </motion.p>
@@ -232,7 +232,7 @@ export default function Home() {
                 },
                 {
                   title: "AI-Driven Intelligence",
-                  desc: "Applying artificial intelligence to improve visibility and decision-making.",
+                  desc: "Applying artificial intelligence to improve visibility and decision making.",
                 },
                 {
                   title: "Built-in Security",
@@ -281,19 +281,19 @@ export default function Home() {
               {[
                 {
                   title: "AI Intelligence",
-                  desc: "AI-driven systems that understand patterns, detect changes, and support smarter decision-making.",
+                  desc: "AI driven systems that understand patterns, detect changes, and support smarter decision making.",
                   img: "/images/core-1.png",
                   link: "/artificial-intelligence"
                 },
                 {
                   title: "5G Connectivity",
-                  desc: "Ultra-fast, low-latency connectivity enabling real-time and mission-critical digital services.",
+                  desc: "Ultra fast, low latency connectivity enabling realtime and mission critical digital services.",
                   img: "/images/core-2.png",
                   link: "/5g-connectivity"
                 },
                 {
                   title: "Cybersecurity",
-                  desc: "Advanced protection for open, software-defined, and highly connected environments.",
+                  desc: "Advanced protection for open, software defined, and highly connected environments.",
                   img: "/images/core-3.png",
                   link: "/cyber-security"
                 },
@@ -358,7 +358,7 @@ export default function Home() {
                 </h2>
 
                 <p className="text-gray-400 max-w-md leading-relaxed text-sm md:text-base">
-                  Designed for real-world environments, our approach helps organizations
+                  Designed for real world environments, our approach helps organizations
                   understand what's happening, make sense of change, and respond faster
                   with confidence.
                 </p>
@@ -407,7 +407,7 @@ export default function Home() {
               <p className="text-sm text-gray-400">
                 This approach enables{" "}
                 <span className="text-white font-medium">
-                  resilient, adaptive, and future-ready networks
+                  resilient, adaptive, and future ready networks
                 </span>
                 .
               </p>
