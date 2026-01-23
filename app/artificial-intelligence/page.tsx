@@ -25,38 +25,6 @@ import { fadeUp, fadeIn, stagger } from "@/lib/motion";
 
 export default function AIIntelligencePage() {
     const router = useRouter();
-    const [activeSection, setActiveSection] = useState("overview");
-
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            const yOffset = -80;
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: "smooth" });
-            setActiveSection(sectionId);
-        }
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = ["overview", "approach", "capabilities", "benefits", "applications"];
-            const scrollPosition = window.scrollY + 100;
-
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element) {
-                    const { offsetTop, offsetHeight } = element;
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section);
-                        break;
-                    }
-                }
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const aiPillars = [
         {
@@ -150,7 +118,7 @@ export default function AIIntelligencePage() {
             <div className="absolute inset-0 bg-radial-gradient pointer-events-none -z-10" />
 
             <div className="container mx-auto relative z-10">
-                <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
+                <Navbar />
 
                 {/* Back Button */}
                 <motion.div
@@ -267,7 +235,6 @@ export default function AIIntelligencePage() {
                                     </h3>
                                     <div className="space-y-8">
                                         <div className="relative">
-                                            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-pink-500" />
                                             {[
                                                 { step: "01", title: "Data Collection", desc: "Aggregate network telemetry from multiple sources" },
                                                 { step: "02", title: "Pattern Recognition", desc: "Identify trends and anomalies using ML algorithms" },
@@ -335,7 +302,7 @@ export default function AIIntelligencePage() {
                 </motion.section>
 
                 {/* ================= CAPABILITIES SECTION ================= */}
-                <motion.section
+                {/* <motion.section
                     id="capabilities"
                     initial="hidden"
                     whileInView="show"
@@ -425,10 +392,10 @@ export default function AIIntelligencePage() {
                             </motion.div>
                         </div>
                     </div>
-                </motion.section>
+                </motion.section> */}
 
                 {/* ================= APPLICATIONS SECTION ================= */}
-                <motion.section
+                {/* <motion.section
                     id="applications"
                     initial="hidden"
                     whileInView="show"
@@ -472,10 +439,10 @@ export default function AIIntelligencePage() {
                             ))}
                         </motion.div>
                     </div>
-                </motion.section>
+                </motion.section> */}
 
                 {/* ================= BENEFITS SECTION ================= */}
-                <motion.section
+                {/* <motion.section
                     id="benefits"
                     initial="hidden"
                     whileInView="show"
@@ -530,7 +497,7 @@ export default function AIIntelligencePage() {
                             </div>
                         </div>
                     </div>
-                </motion.section>
+                </motion.section> */}
 
                 {/* ================= FINAL CTA ================= */}
                 <motion.section
@@ -562,11 +529,8 @@ export default function AIIntelligencePage() {
                                 variants={fadeUp}
                                 className="flex flex-col sm:flex-row gap-4 justify-center"
                             >
-                                <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl px-8 py-6 text-lg">
+                                <Button onClick={() => router.push("/contact-us")} className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl px-8 py-6 text-lg">
                                     Start Your AI Journey
-                                </Button>
-                                <Button variant="outline" className="rounded-xl px-8 py-6 text-lg border-white/20">
-                                    View Success Stories
                                 </Button>
                             </motion.div>
                         </div>

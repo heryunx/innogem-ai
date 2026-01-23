@@ -29,38 +29,6 @@ import { fadeUp, fadeIn, stagger } from "@/lib/motion";
 
 export default function CybersecurityPage() {
     const router = useRouter();
-    const [activeSection, setActiveSection] = useState("overview");
-
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            const yOffset = -80;
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: "smooth" });
-            setActiveSection(sectionId);
-        }
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = ["overview", "approach", "framework", "solutions", "threats"];
-            const scrollPosition = window.scrollY + 100;
-
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element) {
-                    const { offsetTop, offsetHeight } = element;
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section);
-                        break;
-                    }
-                }
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const securityPillars = [
         {
@@ -163,7 +131,7 @@ export default function CybersecurityPage() {
             <div className="absolute inset-0 bg-radial-gradient pointer-events-none -z-10" />
 
             <div className="container mx-auto relative z-10">
-                <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
+                <Navbar />
 
                 {/* Back Button */}
                 <motion.div
@@ -260,15 +228,7 @@ export default function CybersecurityPage() {
                                     ensures that security measures enhance rather than hinder your digital transformation.
                                 </p>
 
-                                <div className="flex flex-wrap gap-4 mb-8">
-                                    <Button className="bg-red-500 hover:bg-red-600 rounded-xl px-6 py-3">
-                                        <Shield className="w-4 h-4 mr-2" />
-                                        Security Assessment
-                                    </Button>
-                                    <Button variant="outline" className="rounded-xl px-6 py-3 border-white/20">
-                                        Download Security White Paper
-                                    </Button>
-                                </div>
+
                             </motion.div>
 
                             <motion.div variants={fadeUp} className="relative">
@@ -530,11 +490,8 @@ export default function CybersecurityPage() {
                                     variants={fadeUp}
                                     className="flex flex-col sm:flex-row gap-4 justify-center"
                                 >
-                                    <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 rounded-xl px-8 py-6 text-lg">
-                                        Request Security Assessment
-                                    </Button>
-                                    <Button variant="outline" className="rounded-xl px-8 py-6 text-lg border-white/20">
-                                        Speak with Security Expert
+                                    <Button onClick={() => router.push("/contact-us")} className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 rounded-xl px-8 py-6 text-lg">
+                                        Contact Us
                                     </Button>
                                 </motion.div>
 

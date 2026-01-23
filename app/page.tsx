@@ -11,46 +11,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Home() {
-  const router = useRouter()
-  const [activeSection, setActiveSection] = useState("home");
 
-  // Smooth scroll untuk anchor links
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const yOffset = -80; // Offset untuk navbar
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      window.scrollTo({
-        top: y,
-        behavior: "smooth"
-      });
-
-      setActiveSection(sectionId);
-    }
-  };
-
-  // Handle scroll untuk update active section
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "why-innogem", "capabilities", "solutions", "contact"];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <main className="min-h-screen relative overflow-hidden text-white">
@@ -66,7 +27,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-radial-gradient pointer-events-none -z-10" />
 
       <div className="container mx-auto relative z-10">
-        <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
+        <Navbar />
 
         {/* ================= HERO ================= */}
         <section

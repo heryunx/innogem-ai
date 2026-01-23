@@ -1,49 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ArrowRight, Download, Shield, Zap, Cpu, Globe } from "lucide-react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp, fadeIn, stagger } from "@/lib/motion";
 
 export default function FiveGConnectivityPage() {
     const router = useRouter();
-    const [activeSection, setActiveSection] = useState("overview");
 
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            const yOffset = -80;
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: "smooth" });
-            setActiveSection(sectionId);
-        }
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = ["overview", "benefits", "capabilities", "applications"];
-            const scrollPosition = window.scrollY + 100;
-
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element) {
-                    const { offsetTop, offsetHeight } = element;
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section);
-                        break;
-                    }
-                }
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const features = [
         {
@@ -68,24 +35,6 @@ export default function FiveGConnectivityPage() {
         }
     ];
 
-    const applications = [
-        {
-            category: "Industry 4.0",
-            items: ["Smart factories", "Predictive maintenance", "AR-assisted operations", "Autonomous logistics"]
-        },
-        {
-            category: "Healthcare",
-            items: ["Remote surgery", "Real-time patient monitoring", "Ambulance connectivity", "Medical IoT"]
-        },
-        {
-            category: "Smart Cities",
-            items: ["Traffic management", "Public safety networks", "Utility monitoring", "Environmental sensing"]
-        },
-        {
-            category: "Entertainment",
-            items: ["Immersive VR/AR", "Cloud gaming", "Ultra HD streaming", "Live event broadcasting"]
-        }
-    ];
 
     return (
         <main className="min-h-screen relative overflow-hidden text-white">
@@ -101,7 +50,7 @@ export default function FiveGConnectivityPage() {
             <div className="absolute inset-0 bg-radial-gradient pointer-events-none -z-10" />
 
             <div className="container mx-auto relative z-10">
-                <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
+                <Navbar />
 
                 {/* Back Button */}
                 <motion.div
@@ -187,15 +136,7 @@ export default function FiveGConnectivityPage() {
                                     by focusing on reliable, resilient connectivity within open and flexible network ecosystems,
                                     providing secure foundations for long-term innovation.
                                 </p>
-                                <div className="flex flex-wrap gap-4">
-                                    <Button className="bg-blue-500 hover:bg-blue-600 rounded-xl px-6 py-3">
-                                        <Download className="w-4 h-4 mr-2" />
-                                        Download Whitepaper
-                                    </Button>
-                                    <Button variant="outline" className="rounded-xl px-6 py-3 border-white/20">
-                                        Schedule Consultation
-                                    </Button>
-                                </div>
+
                             </motion.div>
 
                             <motion.div variants={fadeUp} className="relative">
@@ -285,7 +226,7 @@ export default function FiveGConnectivityPage() {
                 </motion.section>
 
                 {/* ================= CAPABILITIES SECTION ================= */}
-                <motion.section
+                {/* <motion.section
                     id="capabilities"
                     initial="hidden"
                     whileInView="show"
@@ -342,7 +283,7 @@ export default function FiveGConnectivityPage() {
                             </motion.div>
                         </div>
                     </div>
-                </motion.section>
+                </motion.section> */}
 
                 {/* ================= APPLICATIONS SECTION ================= */}
                 {/* <motion.section
@@ -419,7 +360,7 @@ export default function FiveGConnectivityPage() {
                                     variants={fadeUp}
                                     className="flex justify-center"
                                 >
-                                    <Button className="bg-blue-500 hover:bg-blue-600 rounded-xl px-8 py-6 text-lg">
+                                    <Button onClick={() => router.push("/contact-us")} className="bg-blue-500 hover:bg-blue-600 rounded-xl px-8 py-6 text-lg">
                                         Contact Us
                                     </Button>
                                 </motion.div>
