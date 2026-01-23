@@ -58,111 +58,10 @@ export default function ResourcesPage() {
             downloads: 1247,
             featured: true,
             coverColor: "from-purple-600/20 to-blue-600/20"
-        },
-        {
-            id: 2,
-            title: "Zero Trust Architecture for 5G Networks",
-            description: "Implementing Zero Trust principles in 5G network infrastructure for enhanced security and resilience.",
-            category: "security",
-            date: "2024-02-28",
-            readTime: "18 min",
-            pages: 32,
-            downloads: 892,
-            featured: false,
-            coverColor: "from-red-600/20 to-orange-600/20"
-        },
-        {
-            id: 3,
-            title: "AI-Powered Network Optimization",
-            description: "Leveraging machine learning algorithms for real-time network performance optimization and predictive maintenance.",
-            category: "ai",
-            date: "2024-02-10",
-            readTime: "22 min",
-            pages: 38,
-            downloads: 1056,
-            featured: false,
-            coverColor: "from-purple-600/20 to-pink-600/20"
-        },
-        {
-            id: 4,
-            title: "5G Private Networks for Enterprise",
-            description: "Comprehensive guide to deploying and managing private 5G networks for industrial and enterprise applications.",
-            category: "5g",
-            date: "2024-01-22",
-            readTime: "30 min",
-            pages: 48,
-            downloads: 743,
-            featured: false,
-            coverColor: "from-blue-600/20 to-cyan-600/20"
-        },
-        {
-            id: 5,
-            title: "Cybersecurity Threat Landscape 2024",
-            description: "Annual report on emerging cyber threats and defense strategies for next-generation networks.",
-            category: "security",
-            date: "2024-01-05",
-            readTime: "35 min",
-            pages: 56,
-            downloads: 1589,
-            featured: false,
-            coverColor: "from-red-600/20 to-amber-600/20"
-        },
-        {
-            id: 6,
-            title: "Edge Computing & AI Integration",
-            description: "Strategies for integrating AI capabilities at the network edge for low-latency applications.",
-            category: "ai",
-            date: "2023-12-15",
-            readTime: "28 min",
-            pages: 44,
-            downloads: 934,
-            featured: false,
-            coverColor: "from-green-600/20 to-emerald-600/20"
         }
     ];
 
-    const insights = [
-        {
-            id: 1,
-            title: "The Future of Network Automation",
-            type: "Blog Post",
-            category: "innovation",
-            date: "2024-03-20",
-            readTime: "8 min",
-            author: "Dr. Sarah Chen",
-            views: 2450
-        },
-        {
-            id: 2,
-            title: "Case Study: Smart City Deployment",
-            type: "Case Study",
-            category: "5g",
-            date: "2024-03-12",
-            readTime: "12 min",
-            author: "Michael Rodriguez",
-            views: 1876
-        },
-        {
-            id: 3,
-            title: "AI Ethics in Network Security",
-            type: "Article",
-            category: "ai",
-            date: "2024-03-05",
-            readTime: "10 min",
-            author: "Dr. James Wilson",
-            views: 3120
-        },
-        {
-            id: 4,
-            title: "Quantum-Safe Cryptography",
-            type: "Technical Brief",
-            category: "security",
-            date: "2024-02-25",
-            readTime: "15 min",
-            author: "Dr. Lisa Park",
-            views: 1567
-        }
-    ];
+
 
     const filteredWhitepapers = whitepapers.filter(paper => {
         const matchesSearch = paper.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -281,7 +180,7 @@ export default function ResourcesPage() {
                 </motion.section>
 
                 {/* ================= FEATURED WHITEPAPER ================= */}
-                <motion.section
+                {/* <motion.section
                     id="whitepapers"
                     initial="hidden"
                     whileInView="show"
@@ -300,7 +199,6 @@ export default function ResourcesPage() {
                             </p>
                         </motion.div>
 
-                        {/* Featured Whitepaper Card */}
                         <motion.div
                             variants={fadeUp}
                             className="relative rounded-3xl overflow-hidden mb-16 group"
@@ -353,7 +251,7 @@ export default function ResourcesPage() {
                             </div>
                         </motion.div>
                     </div>
-                </motion.section>
+                </motion.section> */}
 
 
 

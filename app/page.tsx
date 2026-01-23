@@ -262,7 +262,7 @@ export default function Home() {
         {/* ================= OUR CORE ================= */}
         <section
           id="capabilities"
-          className="mt-40 px-6 lg:px-10"
+          className="mt-40 px-6 lg:px-10 scroll-mt-32"
         >
           <motion.div
             initial="hidden"
