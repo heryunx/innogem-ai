@@ -181,7 +181,7 @@ export default function ResourcesPage() {
                 </motion.section>
 
                 {/* ================= FEATURED WHITEPAPER ================= */}
-                <motion.section
+                {/* <motion.section
                     id="whitepapers"
                     initial="hidden"
                     whileInView="show"
@@ -208,7 +208,6 @@ export default function ResourcesPage() {
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 blur-3xl -z-10" />
 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                                {/* LEFT */}
                                 <div className="p-8 lg:p-12">
                                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/20 text-teal-400 rounded-full text-sm font-medium mb-6">
                                         <BookOpen className="w-4 h-4" />
@@ -250,7 +249,6 @@ export default function ResourcesPage() {
                                     </div>
                                 </div>
 
-                                {/* RIGHT */}
                                 <div className="relative p-8 lg:p-12 flex items-center justify-center">
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-2xl" />
                                     <div className="relative z-10 text-center">
@@ -268,7 +266,7 @@ export default function ResourcesPage() {
                             </div>
                         </motion.div>
                     </div>
-                </motion.section>
+                </motion.section> */}
 
 
 
