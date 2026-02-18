@@ -127,17 +127,16 @@ export default function NVIDIAInceptionBlogPage() {
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500/20 to-amber-500/20 text-amber-400 rounded-full text-sm font-medium mb-6">
                                 <Award className="w-4 h-4" />
-                                NVIDIA INCEPTION PROGRAM
+                                BLOG
                             </div>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                                Innogem.ai Joins{" "}
+                                Latest{" "}
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-amber-400">
-                                    NVIDIA Inception
+                                    Articles
                                 </span>
                             </h1>
                             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                                Official announcement and related articles about Innogem.ai's acceptance into
-                                the NVIDIA Inception Program, a global initiative supporting AI startups.
+                                Stay updated with our latest insights on 5G, AI, and cybersecurity.
                             </p>
                         </motion.div>
 
