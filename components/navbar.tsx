@@ -78,10 +78,10 @@ export default function Navbar() {
                     </div>
 
                     <Link
-                        href="/resources"
-                        className={isActive("/resources") ? "text-purple-400" : "text-gray-300 hover:text-white"}
+                        href="/blog"
+                        className={isActive("/blog") ? "text-purple-400" : "text-gray-300 hover:text-white"}
                     >
-                        Resources
+                        Blog
                     </Link>
                 </div>
 
